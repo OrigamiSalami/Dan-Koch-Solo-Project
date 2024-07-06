@@ -1,0 +1,10 @@
+const fetch = require('node-fetch')
+
+const apiController = {};
+
+apiController.getCity = (req, res, next) => {
+    fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=39.500820&lon=-106.146492&exclude={part}&appid=e76c165b13bb9889559081d9f28990cb&units=imperial`)
+        .then((data) => data.text())
+        .then((data) => console.log(data))
+        .then((data) => {const theData = data}) 
+}
